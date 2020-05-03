@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.foodies">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home"
-            android:label="Home"/>
-        <activity android:name=".Login_Form"
-            android:label="Log in"/>
-        <activity android:name=".Forgot_Password"
-            android:label="FORGOT PASSWORD"/>
+        <activity android:name=".MainChat"></activity>
+        <activity
+            android:name=".Home"
+            android:label="Home" />
+        <activity android:name=".Message" />
+        <activity
+            android:name=".Login_Form"
+            android:label="Log in" />
+        <activity
+            android:name=".Forgot_Password"
+            android:label="FORGOT PASSWORD" />
         <activity
             android:name=".SignUp"
             android:label="SignUp">
@@ -24,9 +33,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8943926628298234~7360314495" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 </manifest>

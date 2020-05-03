@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-//import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
 
-
     EditText Name ;
     EditText Password;
     TextView Info;
@@ -34,30 +32,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_signup)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
 
-
-//        setContentView(R.layout.activity_login_form);
-//        getSupportActionBar().setTitle("Login Form");
-//
-//        Name =  (EditText)findViewById(R.id.userName);
-//        Password = (EditText)findViewById(R.id.userPassword);
-////        Info = (TextView)findViewById(R.id.attempt);
-//        Login = (Button)findViewById(R.id.Login);
-//
-//        Login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
 
     }
     @Override
@@ -70,7 +45,6 @@ public class Home extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
-
         if (item.getItemId() == R.id.menuLogout) {
             Intent intent = new Intent(this, Login_Form.class);
 //            sharedpreferences.edit().remove(MainActivity.usernameKey).apply();
@@ -83,6 +57,14 @@ public class Home extends AppCompatActivity {
 
 
     }
+
+    public void onButtonClick(View view) {
+        Intent intent = new Intent(this, MainChat.class);
+        intent.putExtra("userid", "test");
+        startActivity(intent);
+
+    }
+
 
 }
 
